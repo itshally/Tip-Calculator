@@ -1,4 +1,4 @@
-//declare variables
+
 var billValue = document.querySelector('#bill-value'), //bill input
     tipValue = document.querySelector('#tip-value'), // tip input
     numOfPeopleValue = document.querySelector('#number-of-people-value'), //numOfPeople input
@@ -11,16 +11,17 @@ var billValue = document.querySelector('#bill-value'), //bill input
     defaultTipValue = 15,
     defaultNumOfPeople = 2,
     defaultBillTotal = 0,
-    defaultTipAmount = 0;
+    defaultTipAmount = 0,
+    errorMsg = "";
 
-//displays all the default values
-Default();
+
 
 $('.calculate-container').hide();
 
 $('.back-button').click(() => {
     $('.index-view').fadeIn();
-    $(this).parent().hide();
+    // $(this).parent().hide();
+    $('.calculate-container').hide();
     Default();
 });
 
@@ -40,8 +41,16 @@ $("#no-button").click(() => {
     $('.default-hide').show();
 });
 
-$('#tip-value').on('input', () => {
+$('#tip-value').on('input', (e) => {
     Calculate();
+
+    var yourvalue = $(e.target).val(); 
+    if(yourvalue.includes("-")){
+        // alertify.alert('Ready!');
+        errorMsg = "Tip value must be positive";
+        ErrorHandling(errorMsg)
+        
+    }
 });
 
 
@@ -53,6 +62,14 @@ $('#number-of-people-value').on('input', () => {
     Calculate();
 });
 
+
+$('#tip-value').on('keyup', (e) => {
+    
+})
+
+
+//displays all the default values
+Default();
 
 function Default(){
     billValue.value = "";
@@ -76,3 +93,18 @@ function Calculate(){
     $('#split-bill-result').html($splitBill.toFixed(2));
 }
 
+//Sets the bill value to decimal
+function setDecimal(event) {
+    this.value = parseFloat(this.value).toFixed(2);
+} 
+
+function ErrorHandling(x){
+    alertify.minimalDialog || alertify.dialog('minimalDialog',function(){
+        return {
+            main:function(content){
+                this.setContent(content); 
+            }
+        };
+    });
+    alertify.minimalDialog(x);
+}
