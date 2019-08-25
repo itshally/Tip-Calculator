@@ -2,9 +2,6 @@ html, body{
     height: 100%;
     width: 100%;
     background: #FFFFFF;
-    /* background: #d9a7c7;  fallback for old browsers */
-    /* background: -webkit-linear-gradient(to top, #fffcdc, #d9a7c7);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to top, #fffcdc, #d9a7c7); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /* index view styles */
@@ -15,9 +12,7 @@ html, body{
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent !important;
-    /* color: #000000; */
     padding: 2%;
-    /* border-radius: 5px; */
 }
 .index-view h1{
     width: auto;
@@ -63,28 +58,19 @@ html, body{
     width: 100%;
     padding: 5% 0;
     display: none;
-    /* position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -25%); */
-    /* background-color: red; */
-    /* color: #000000; */
 }
 .calculate-container .row{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* margin: auto; */
 }
 .col-lg-8{
     margin: auto;
-    /* background-color: red; */
 }
 .col-lg-8 .container h2{
     text-align: center;
     padding: 2%;
-    /* font-size: 4em; */
 }
 #result-container{
     margin-left: 10%;
@@ -115,8 +101,6 @@ html, body{
 }
 .input-group{
     width: 100%;
-    /* display: inline-block;
-    margin: auto; */
     margin: auto;
     border-bottom: 1px solid #000000;
 }
@@ -125,4 +109,25 @@ html, body{
 .input-value::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+.col-12 #result-container, .col-12 h2{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+.col-12 .container-fluid{
+    margin-top: 10%;
+}
+.col-12 h2{
+    font-size: 1.5em;
+}
+.col-12 #result-container h3{
+    font-size: 1em;
+    margin-top: 10px;
+}
+.col-12 .form-control{
+    font-size: 1.2em;
+}
+.col-12 .input-group-text{
+    font-size: 0.8em;
 }

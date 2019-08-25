@@ -20,7 +20,6 @@ $('.calculate-container').hide();
 
 $('.back-button').click(() => {
     $('.index-view').fadeIn();
-    // $(this).parent().hide();
     $('.calculate-container').hide();
     Default();
 });
@@ -44,28 +43,26 @@ $("#no-button").click(() => {
 $('#tip-value').on('input', (e) => {
     Calculate();
 
-    var yourvalue = $(e.target).val(); 
-    if(yourvalue.includes("-")){
-        // alertify.alert('Ready!');
+    var tipValue = $(e.target).val(); 
+    if(tipValue.includes("-")){
         errorMsg = "Tip value must be positive";
-        ErrorHandling(errorMsg)
-        
+        ErrorHandling(errorMsg);
     }
 });
 
 
-$('#bill-value').on('input', () => {
+$('#bill-value').on('input', (e) => {
     Calculate();
+    var billValue = $(e.target).val(); 
+    if(billValue.includes("-")){
+        errorMsg = "Bill value must be positive";
+        ErrorHandling(errorMsg);
+    }
 });
 
 $('#number-of-people-value').on('input', () => {
     Calculate();
 });
-
-
-$('#tip-value').on('keyup', (e) => {
-    
-})
 
 
 //displays all the default values
@@ -103,6 +100,18 @@ function ErrorHandling(x){
         return {
             main:function(content){
                 this.setContent(content); 
+            },
+            setup:function(){
+                return{
+                    options:{
+                        title: '<i class="fas fa-exclamation-circle"></i> Warning'
+                    }
+                }
+            },
+            hooks:{
+                onclose: function(){
+                    Default();
+                }
             }
         };
     });
