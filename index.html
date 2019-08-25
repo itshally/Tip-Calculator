@@ -9,18 +9,18 @@
 		
 		<!-- bootstrap css -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	  
-		<!-- own css -->
-		<link rel="stylesheet" href="css/style.css">
 		
 		<!-- fontawesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+		<!-- own css -->
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
     
 		<!-- first container to appear -->
 		<div class="container index-view">
-			<h1>Are you splitting the bill?</h1>
+			<h1 class="h1">Are you splitting the bill?</h1>
 			<div class="row">
 				<div class="col">
 					<button id="yes-button" class="index-buttons">YES</button>
@@ -34,69 +34,57 @@
 		<!-- this container will appear when user clicked "YES / NO"-->
 		<div class="container calculate-container">
 			<button class="back-button"><i class="far fa-arrow-alt-circle-left"></i></button>
-			<ul class="list-group list-group-flush">
-				
-				<li class="list-group-item">
-					<div class="row">
-						<!-- take in the value of the bill; default value is 0.00 -->
-						<div class="col">
-							<label>Enter Bill Amount: </label>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-								</div>
-								<input type="number" id="bill-value" onchange="setDecimal" class="form-control input-value" min="0">
-							</div>
+
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-4">
+					<label>Enter Bill Amount: </label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
 						</div>
-						<!-- take in the desired tip; dafault value is 15 -->
-						<div class="col-4">
-							<label>Tip Percentage: </label>
-							<div class="input-group mb-3">
-								<input type="number" id="tip-value" class="form-control input-value">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fas fa-percent"></i></span>
-								</div>
-							</div>
+						<input type="number" id="bill-value" onchange="setDecimal" class="form-control input-value" min="0">
+					</div>
+
+					<label>Tip Percentage: </label>
+					<div class="input-group mb-3">
+						<input type="number" id="tip-value" class="form-control input-value">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-percent"></i></span>
 						</div>
 					</div>
-					
-				</li>
-				
-				<li class="list-group-item">
 
-				</li>
-				<!-- take in the number of people; default value is 1-->
-				<li class="list-group-item split-bill-option">
-					<div class="row">
-						<div class="col"><label>Number of People: </label></div>
-						<div class="col input-group mb-3">
+					<div class="split-bill-option">
+						<label>Number of People: </label>
+						<div class="input-group mb-3">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="number" id="number-of-people-value" class="form-control input-value" min="2"> 
+							<input type="number" id="number-of-people-value" class="form-control input-value" min="2">
 						</div>
 					</div>
-				</li>
-			</ul>
+				</div>
 
-        
-			<!-- results will appear below -->
-			<div class="container">
-				<h2>Results</h2>
-				<h3 class="default-hide">Total Tip</h3>
-				<i class="fas fa-dollar-sign"></i> <label id="total-tip-result"></label>
-				<h3 class="default-hide">Total Bill</h3> 
-				<i class="fas fa-dollar-sign"></i> <label id="total-bill-result"></label>
-				<!-- tip per person -->
-				<h3 class="split-bill-option">Tip per Person</h3>
-				<i class="fas fa-dollar-sign split-bill-option"></i> <label id="split-tip-result" class="split-bill-option"></label>
-				<h3 class="split-bill-option">Total Bill per Person</h3>
-				<i class="fas fa-dollar-sign split-bill-option"></i> <label id="split-bill-result" class="split-bill-option"></label>
-	<!--             
-				<p id="tip-per-person-result" class="split-bill-option"></p>
-				
-				<p id="bill-per-person-result" class="split-bill-option"></p> -->
+
+				<!-- result column -->
+				<div class="col-12 col-md-6 col-lg-8">
+					<!-- results will appear below -->
+					<div class="container">
+						<h2>Results</h2>
+						<div id="result-container">
+							<h3 class="default-hide">Total Tip</h3>
+							<i class="fas fa-dollar-sign default-hide"></i> <label class="default-hide" id="total-tip-result"></label>
+							<h3 class="default-hide">Total Bill</h3> 
+							<i class="fas fa-dollar-sign default-hide"></i> <label class="default-hide" id="total-bill-result"></label>
+							<!-- tip per person -->
+							<h3 class="split-bill-option">Tip per Person</h3>
+							<i class="fas fa-dollar-sign split-bill-option"></i> <label class="split-bill-option" id="split-tip-result"></label>
+							<h3 class="split-bill-option">Total Bill per Person</h3>
+							<i class="fas fa-dollar-sign split-bill-option"></i> <label class="split-bill-option" id="split-bill-result"></label>
+						</div>
+					</div>
+				</div>
 			</div>
+
 		</div>
 
   
