@@ -29,7 +29,3 @@ start index.html
 
 ### Author
 Hally
-
-
-### Demo
-[Live Preview](https://itshally.github.io/TipCalculator-Web/)
