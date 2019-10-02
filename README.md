@@ -4,6 +4,13 @@ In this project, it gives the user an option whether it prefers to split the bil
 
 Here is a live [demo](https://itshally.github.io/TipCalculator-Web/).
 
+### Some additional requirements:
+
+- The bill value must be positive float, but the application must handle user input that might be
+    a negative or 0 dollar amount (i.e. error handling).
+- The user input percentage for the tip must be a positive float.
+- The return value must be a float rounded to two decimal points (i.e. accurate dollars and cents).
+
 ## Technologies
 
 

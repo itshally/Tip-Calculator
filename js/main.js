@@ -15,8 +15,6 @@ $(document).ready(() => {
         defaultTipAmount = 0,
         errorMsg = "";
 
-
-
     $('.calculate-container').hide();
 
     $('.back-button').click(() => {
@@ -46,10 +44,12 @@ $(document).ready(() => {
 
     $('#tip-value').on('input', (e) => {
         Calculate();
-
         var tipValue = $(e.target).val();
         if (tipValue.includes("-")) {
-            errorMsg = "Tip value must be positive";
+            errorMsg = "Tip value must be positive.";
+            ErrorHandling(errorMsg);
+        }else if(!parseFloat(tipValue)){
+            errorMsg = "Invalid tip value.";
             ErrorHandling(errorMsg);
         }
     });
@@ -61,11 +61,30 @@ $(document).ready(() => {
         if (billValue.includes("-")) {
             errorMsg = "Bill value must be positive";
             ErrorHandling(errorMsg);
+        } else if(!parseFloat(billValue)){
+            errorMsg = "Invalid bill value";
+            ErrorHandling(errorMsg);
         }
+
     });
 
-    $('#number-of-people-value').on('input', () => {
-        Calculate();
+    $('#number-of-people-value').on('input', (e) => {
+        var personValue = $(e.target).val();
+        if (personValue.includes('.')) {
+            errorMsg = "Number of people must be integer.";
+            ErrorHandling(errorMsg);
+        }
+        else if(personValue.includes('-')){
+            errorMsg = "Number of people must be positive integer.";
+            ErrorHandling(errorMsg);
+        }
+        else if(personValue === '0'){
+            errorMsg = "Number of people must be at least more than zero.";
+            ErrorHandling(errorMsg);
+        }
+        else{
+            Calculate();
+        }
     });
 
 
@@ -108,9 +127,16 @@ $(document).ready(() => {
                 setup: function () {
                     return {
                         options: {
-                            title: '<i class="fas fa-exclamation-circle"></i> Warning'
+                            title: '<i class="fas fa-exclamation-circle"></i> Warning',
+                            closableByDimmer: false,
+                            onclose: () => {
+                                Default();
+                            }
                         }
                     }
+                },
+                prepare: function(closeEvent){
+                    Default(closeEvent);
                 },
                 hooks: {
                     onclose: function () {
@@ -121,4 +147,5 @@ $(document).ready(() => {
         });
         alertify.minimalDialog(x);
     }
+    
 });
