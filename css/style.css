@@ -1,24 +1,45 @@
 html, body{
     height: 100%;
     width: 100%;
-    background: #FFFFFF;
+    background-color: #ebf4f6;
+    font-family: 'Taviraj', serif;
+}
+
+.page-title{
+    text-align: center;
+    padding: 3.5rem 1rem;
+    color: #5e5656;
+    font-size: 2.5rem;
+    font-family: 'Lato', sans-serif;
 }
 
 /* index view styles */
 .index-view{
-    width: 80%;
+    width: 90%;
+    height: 60%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: transparent !important;
-    padding: 2%;
+    background-color: #fdf9f9;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px -5px;
 }
-.index-view h1{
-    width: auto;
+.index-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.index-view h4{
+    width: 100%;
     text-align: center;
-    padding: 2%;
-} 
+}
+.index-view h4{
+    padding-bottom: 1.5rem;
+}
 .index-buttons{
     display: block;
     margin: 5% auto;
@@ -27,6 +48,8 @@ html, body{
     border: none;
     border-radius: 5px;
     outline: none !important;
+    background-color: #76b4bd;
+    color: #fdf9f9;
 }
 .index-buttons:after{
     font-family: 'Font Awesome 5 Free';
@@ -55,22 +78,23 @@ html, body{
 
 /* calculate style */
 .calculate-container{
-    width: 100%;
-    padding: 5% 0;
-    display: none;
-}
-.calculate-container .row{
+    width: 90%;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #fdf9f9;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 10px -5px;
 }
-.col-lg-8{
+.calculate-container .row{
+    width: 75%;
     margin: auto;
 }
-.col-lg-8 .container h2{
-    text-align: center;
-    padding: 2%;
+.calculate-container label{
+    font-weight: bold;
 }
 #result-container{
     margin-left: 10%;
@@ -79,10 +103,10 @@ html, body{
     background-color:transparent;
     border-color: transparent;
     font-size: 1.5em;
-    font-weight: normal;
     color: #000000;
 }
 .form-control{
+    background-color: transparent;
     border-color: transparent;
     font-size: 3em;
     color: #000000;   
@@ -92,6 +116,8 @@ html, body{
     text-align: center
 }
 .form-control:focus{
+    width: auto;
+    background-color: #eeeeee;
     box-shadow: none;
     border-color: transparent;
     color: #000000;   
@@ -104,6 +130,26 @@ html, body{
     margin: auto;
     border-bottom: 1px solid #000000;
 }
+.footer-container{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+.footer-container p{
+    padding: 2rem 0rem;
+    margin: auto;
+    color: #5e5656;
+    font-family: 'Lato', sans-serif;
+}
+.footer-container a{
+    color: #5e5656;
+    text-decoration: none;
+}
+.footer-container a:hover{
+    color: #ff77aa;
+}
+
 /* removing the spinner for the input type="number" */
 .input-value::-webkit-inner-spin-button, 
 .input-value::-webkit-outer-spin-button { 

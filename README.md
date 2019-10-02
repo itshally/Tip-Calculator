@@ -27,5 +27,21 @@ start index.html
 ```
 
 
+  
+## Here are some screenshots:
+
+- This is the first view once the app starts running:
+
+![img0](screenshots/screenshot-0.png)
+
+- If the user chooses *yes*, this will be the view:
+
+![img1](screenshots/screenshot-1.png)
+
+- But, if the user chooses *no*, then this will be the view:
+
+![img2](screenshots/screenshot-2.png)
+
+
 ### Author
 Hally

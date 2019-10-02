@@ -13,6 +13,9 @@
 		<!-- fontawesome -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+		<!-- google font -->
+		<link href="https://fonts.googleapis.com/css?family=Lato|Taviraj&display=swap" rel="stylesheet">
+
 		<!-- own css -->
 		<link rel="stylesheet" href="css/style.css">
 
@@ -22,15 +25,18 @@
 	</head>
 	<body>
     
+		<h1 class="h1 page-title">Tip Calculator</h1>
 		<!-- first container to appear -->
 		<div class="container index-view">
-			<h1 class="h1">Are you splitting the bill?</h1>
-			<div class="row">
-				<div class="col">
-					<button id="yes-button" class="index-buttons">YES</button>
-				</div>
-				<div class="col">
-					<button id="no-button" class="index-buttons">NO</button>
+			<div class="index-content">
+				<h4 class="h4">Are you splitting the bill?</h4>
+				<div class="row justify-content-center">
+					<div class="col-6 col-md-6 col-lg-4">
+						<button id="yes-button" class="index-buttons">YES</button>
+					</div>
+					<div class="col-6 col-md-6 col-lg-4">
+						<button id="no-button" class="index-buttons">NO</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -40,7 +46,7 @@
 			<button class="back-button"><i class="far fa-arrow-alt-circle-left"></i></button>
 
 			<div class="row">
-				<div class="col-12 col-md-6 col-lg-4">
+				<div class="col-12 col-md-6">
 					<label>Enter Bill Amount: </label>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
@@ -70,7 +76,7 @@
 
 
 				<!-- result column -->
-				<div class="col-12 col-md-6 col-lg-8">
+				<div class="col-12 col-md-6">
 					<!-- results will appear below -->
 					<div class="container-fluid">
 						<h2>Results</h2>
@@ -90,6 +96,10 @@
 			</div>
 		</div>
 
+		<!-- footer -->
+		<div class="container-fluid footer-container">
+			<p>Copyright &copy; 2019 <a href="https://github.com/itshally">Hally</a>. All Rights Reserved.</p>
+		</div>
   
 		<!-- bootstrap js -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
