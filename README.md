@@ -1,4 +1,4 @@
-# Tip Calculator
+# Tip Calculator [Web]
 
 In this project, it gives the user an option whether it prefers to split the bill or not. If the user picks "No", the app will calculate for the total of the entered bill value and total tip amount. However, if the user chooses "Yes", the app will calculate the same way but will divide to the number of people. Thus, this will produce a result for the total tip amount and the total bill per person.
 
