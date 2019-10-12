@@ -2,25 +2,23 @@
 
 In this project, it gives the user an option whether it prefers to split the bill or not. If the user picks "No", the app will calculate for the total of the entered bill value and total tip amount. However, if the user chooses "Yes", the app will calculate the same way but will divide to the number of people. Thus, this will produce a result for the total tip amount and the total bill per person.
 
-Here is a live [demo](https://itshally.github.io/TipCalculator-Web/).
 
 ### Some additional requirements:
 
-- The bill value must be positive float, but the application must handle user input that might be
+:white_check_mark: The bill value must be positive float, but the application must handle user input that might be
     a negative or 0 dollar amount (i.e. error handling).
-- The user input percentage for the tip must be a positive float.
-- The return value must be a float rounded to two decimal points (i.e. accurate dollars and cents).
+    
+:white_check_mark: The user input percentage for the tip must be a positive float.
+
+:white_check_mark: The return value must be a float rounded to two decimal points (i.e. accurate dollars and cents).
 
 ## Technologies
-
-
 - JavaScript
   - [jQuery](https://jquery.com/)
   - [alertifyjs](https://alertifyjs.com/)
   
 
-## Setup
-
+## Install
 To locally run this project, type these commands to your git bash:
 
 
@@ -32,9 +30,10 @@ cd TipCalculator-Web
 start index.html
 ```
 
-
+## Usage
+I'm deploying it using Github pages.
   
-## Here are some screenshots:
+## Screenshots:
 
 - This is the first view once the app starts running:
 
@@ -48,6 +47,8 @@ start index.html
 
 ![img2](screenshots/screenshot-2.png)
 
+## Demo
+Here is a live [demo](https://itshally.github.io/TipCalculator-Web/).
 
 ### Author
-Hally
+[Hally](https://github.com/itshally)
